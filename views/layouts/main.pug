@@ -1,0 +1,54 @@
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title || 'Meine Anwendung'}
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-4
+      .container
+        a.navbar-brand(href="/") Prüf-App
+        button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNav
+          ul.navbar-nav.ml-auto
+            if currentUser
+              li.nav-item
+                a.nav-link(href="/dashboard") Dashboard
+              li.nav-item
+                a.nav-link(href="/auth/logout") Logout (#{currentUser.username})
+            else
+              li.nav-item
+                a.nav-link(href="/auth/login") Login
+              //- li.nav-item
+              //-   a.nav-link(href="/auth/register") Register
+
+    .container
+      //- Flash Messages
+      if success_msg && success_msg.length > 0
+        .alert.alert-success.alert-dismissible.fade.show(role='alert')
+          = success_msg
+          button.close(type='button', data-dismiss='alert', aria-label='Close')
+            span(aria-hidden='true') &times;
+      if error_msg && error_msg.length > 0
+        .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+          = error_msg
+          button.close(type='button', data-dismiss='alert', aria-label='Close')
+            span(aria-hidden='true') &times;
+      if error && error.length > 0
+        .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+          = error
+          button.close(type='button', data-dismiss='alert', aria-label='Close')
+            span(aria-hidden='true') &times;
+
+      block content // Hier wird der spezifische Seiteninhalt eingefügt
+
+    footer.footer.mt-auto.py-3.bg-light.text-center.mt-5
+        .container
+            span.text-muted © #{new Date().getFullYear()} Prüf-App
+
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js") // Popper.js ist für Bootstrap 4 notwendig
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")

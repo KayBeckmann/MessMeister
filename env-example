@@ -1,0 +1,14 @@
+# Datenbank Konfiguration (Beispiel für PostgreSQL)
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=your_postgres_user
+DB_PASSWORD=your_postgres_password
+DB_NAME=pruef_app_db # Legen Sie diese Datenbank in PostgreSQL an!
+DB_DIALECT=postgres
+
+# Session Geheimnis (ersetzen durch einen langen, zufälligen String)
+SESSION_SECRET=a_very_long_and_random_secret_key_for_sessions
+
+# Server Port
+PORT=3000
+

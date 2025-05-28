@@ -1,0 +1,50 @@
+{
+  "name": "messmeister",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "pug",
+    "sql",
+    "pruefung"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KayBeckmann/MessMeister.git"
+  },
+  "keywords": [],
+  "author": "Kay Beckmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KayBeckmann/MessMeister/issues"
+  },
+  "homepage": "https://github.com/KayBeckmann/MessMeister#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
+    "csurf": "^1.11.0",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pdfmake": "^0.2.10",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
+    "pug": "^3.0.2",
+    "sequelize": "^6.37.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
